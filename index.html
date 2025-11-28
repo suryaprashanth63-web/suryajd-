@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Forward | Premium T-Shirt Collection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section with Animated Background -->
+    <div class="hero-bg"></div>
+    
+    <!-- Navigation Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">👕</span>
+                <span class="logo-text">Fashion Forward</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#products" class="nav-link">Collection</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+            <button class="cart-btn" onclick="openCart()">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-text">Cart</span>
+                <span class="cart-badge" id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Style That</span>
+                <span class="title-line accent">Speaks Volume</span>
+            </h1>
+            <p class="hero-subtitle">Discover premium quality T-Shirts crafted for the modern lifestyle</p>
+            <button class="cta-button" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                Shop Now
+                <span class="arrow">→</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Collection</h2>
+                <p class="section-subtitle">Handpicked styles for every occasion</p>
+            </div>
+            <div class="products-grid" id="product-list">
+                <!-- Products load via JavaScript -->
+                <div class="loading-spinner"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart">
+        <div class="cart-overlay" onclick="closeCart()"></div>
+        <div class="cart-box">
+            <div class="cart-header">
+                <h2>Your Shopping Cart</h2>
+                <button class="close-btn" onclick="closeCart()">×</button>
+            </div>
+            <div class="cart-content">
+                <div id="cart-items" class="cart-items-list">
+                    <div class="empty-cart">
+                        <div class="empty-cart-icon">🛍️</div>
+                        <p>Your cart is empty</p>
+                        <small>Add some items to get started!</small>
+                    </div>
+                </div>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        <span>Total:</span>
+                        <span id="cart-total">₹0</span>
+                    </div>
+                    <button class="checkout-btn" onclick="checkout()">
+                        Checkout
+                        <span class="arrow">→</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toast-message"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
